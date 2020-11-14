@@ -1,30 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
-from kivymd.uix.selectioncontrol import MDSwitch,MDCheckbox
-from kivymd.uix.textfield import MDTextFieldRect
-from selenium import webdriver
-from kivymd.uix.label import MDLabel
-import selenium
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
-from kivymd.uix.button import Button, MDFloatingActionButton
 from kivymd.uix.card import MDCard
-from kivymd.uix.card import MDSeparator
-import time
 from kivy.uix.modalview import ModalView
-from kivy.uix.scrollview import ScrollView
-from webdriver_manager.chrome import ChromeDriverManager
 from kivymd.uix.boxlayout import BoxLayout
-import scrapy
 from kivy.properties import StringProperty,BoundedNumericProperty,BooleanProperty
 from kivy.uix.button import ButtonBehavior
 from kivy.uix.image import Image
+from kivy.core.window import Window
+from kivymd.uix.label import Label
 city = "istanbul"
 url = 'https://www.timeanddate.com/weather/turkey/'+city
 print(url)
 hourly_url = url+"/hourly"
 daily_url = url+"/ext"
-from kivy.core.window import Window
 Window.size = (350, 625)
 class de(BoxLayout):
     pass
@@ -64,8 +54,6 @@ class MainScreen(MDScreen):
 
 class NewScreen(MDScreen):
     pass
-from kivymd.uix.label import Label
-from kivymd.uix.taptargetview import MDTapTargetView
 
 class ImageButton(ButtonBehavior, Image):
     pass
