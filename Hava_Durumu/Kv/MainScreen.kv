@@ -1,0 +1,439 @@
+<MainScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1,.12
+            canvas.before:
+                Color:
+                    id : color_of_daily
+                    rgba :(.517, .984, .9764, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Label:
+                size_hint:.8,1
+                text:"ISTANBUL"
+                color: 0,122,122,1
+                font_size: "22sp"
+            FloatLayout:
+                size_hint:.2,1
+                ImageButton:
+                    size_hint:.8,.8
+                    pos_hint:{"center_x":.5,"center_y":.5}
+                    #icon: "plus"
+                    on_release:app.new_one()
+                    #primary_palette : "000000"
+                    source:"weather_images/add.png"
+        BoxLayout:
+            size_hint:1,.2
+            ScrollView:
+                bar_width:"0dp"
+                pos_hint: {"center_x": .5, "center_y":.5}
+                GridLayout:
+                    # day
+                    id : hour
+                    rows: 1
+                    size_hint_x: None
+                    width : self.minimum_width
+                    col_default_width: "50dp"
+                    col_force_default : True
+
+        BoxLayout:
+            size_hint:1,.38
+            ScrollView:
+                pos_hint: {"center_x": .5, "center_y":.5}
+                GridLayout:
+                    # day
+                    id : daily
+                    cols: 1
+                    size_hint_y: None
+                    height : self.minimum_height
+                    row_default_height: "42dp"
+                    row_force_default : True
+        BoxLayout:
+            size_hint:1,.3
+            orientation : "vertical"
+            BoxLayout:
+                size_hint:1,.3
+                canvas.before:
+                    Color:
+                        rgba: (0,0,0,1)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                MDLabel:
+                    id : today_info
+                    text: ""
+                    color : 1,1,1,1
+                    padding_x:25
+            BoxLayout:
+                size_hint:1,.3
+                BoxLayout:
+                    BoxLayout:
+                        orientation:"vertical"
+                        canvas.before:
+                            Color:
+                                rgba: (.89,.839,.203,1)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10,10,10,10]
+                        MDLabel:
+                            #color: .14, .87, .890,1
+                            padding_x: 20
+                            size_hint:1,.4
+                            text:"Sunrise"
+                            color : 1,1,1,1
+                        MDSeparator:
+                            size_hint:.95,.03
+                        MDLabel:
+                            color: 1,1,1 ,1
+                            id : sunrise
+                            size_hint:1,.6
+                            text: "07:42"
+                            font_size:"17sp"
+                            halign:'center'
+
+                BoxLayout:
+                    BoxLayout:
+                        orientation:"vertical"
+                        canvas.before:
+                            Color:
+                                rgba: (.019,.11,.47 ,1)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [10,10,10,10]
+                        MDLabel:
+                            padding_x: 20
+                            size_hint:1,.4
+                            text:"Sunset"
+                            color: 1,1,1 ,1
+                        MDSeparator:
+                            size_hint:1,.03
+                        MDLabel:
+                            color: 1,1,1 ,1
+                            id : sunset
+                            size_hint:1,.6
+                            text:"17:52"
+                            halign:'center'
+                            font_size:"20sp"
+            BoxLayout:
+                size_hint:1,.3
+                BoxLayout:
+                    BoxLayout:
+                        orientation:"vertical"
+                        canvas.before:
+                            Color:
+                                id : color_of_feels_like
+                                rgba : (.6117,.8117,.866,1)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDLabel:
+                            size_hint:1,.4
+                            text:"Wind"
+                            padding_x: 20
+                        MDSeparator:
+                            size_hint:1,.03
+                        MDLabel:
+                            id : wind
+                            size_hint:1,.6
+                            text: "23 km/h"
+                            font_size:"20sp"
+                            halign:'center'
+                BoxLayout:
+                    BoxLayout:
+                        orientation:"vertical"
+                        canvas.before:
+                            Color:
+                                id : color_of_feels_like
+                                rgba : (.9529,.9294,.3490,1)
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDLabel:
+                            size_hint:1,.4
+                            text:"Feels Like"
+                            padding_x: 20
+                            color : 0,122,122,1
+                        MDSeparator:
+                            size_hint:1,.03
+                        MDLabel:
+                            id:feels_like
+                            color : 0,122,122,1
+                            size_hint:1,.6
+                            text: ""
+                            font_size:"20sp"
+                            halign:'center'
+<de>:
+    orientation: "vertical"
+    BoxLayout:
+        size_hint: 1,.12
+        canvas.before:
+            Color:
+                id : color_of_daily
+                rgba :(.517, .984, .9764, 1)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            id : city_name
+            size_hint:.8,1
+            text:"ISTANBUL"
+            color: 0,122,122,1
+            font_size: "22sp"
+        FloatLayout:
+            size_hint:.2,1
+            MDFloatingActionButton:
+                size_hint:.8,.8
+                pos_hint:{"center_x":.5,"center_y":.5}
+                icon: "plus"
+                on_release:app.new_one()
+                primary_palette : "000000"
+
+    BoxLayout:
+        size_hint:1,.2
+        ScrollView:
+            bar_width:"0dp"
+            pos_hint: {"center_x": .5, "center_y":.5}
+            GridLayout:
+                # day
+                id : hour
+                rows: 1
+                size_hint_x: None
+                width : self.minimum_width
+                col_default_width: "50dp"
+                col_force_default : True
+
+    BoxLayout:
+        size_hint:1,.38
+        ScrollView:
+            pos_hint: {"center_x": .5, "center_y":.5}
+            GridLayout:
+                # day
+                id : daily
+                cols: 1
+                size_hint_y: None
+                height : self.minimum_height
+                row_default_height: "42dp"
+                row_force_default : True
+    BoxLayout:
+        size_hint:1,.3
+        orientation : "vertical"
+        BoxLayout:
+            size_hint:1,.3
+            canvas.before:
+                Color:
+                    rgba: (0,0,0,1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            MDLabel:
+                id : today_info
+                text: ""
+                color : 1,1,1,1
+                padding_x:25
+        BoxLayout:
+            size_hint:1,.3
+            BoxLayout:
+                BoxLayout:
+                    orientation:"vertical"
+                    canvas.before:
+                        Color:
+                            rgba: (.89,.839,.203,1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius: [10,10,10,10]
+                    MDLabel:
+                        #color: .14, .87, .890,1
+                        padding_x: 20
+                        size_hint:1,.4
+                        text:"Sunrise"
+                        color : 1,1,1,1
+                    MDSeparator:
+                        size_hint:.95,.03
+                    MDLabel:
+                        color: 1,1,1 ,1
+                        id : sunrise
+                        size_hint:1,.6
+                        text: "07:42"
+                        font_size:"17sp"
+                        halign:'center'
+
+            BoxLayout:
+                BoxLayout:
+                    orientation:"vertical"
+                    canvas.before:
+                        Color:
+                            rgba: (.019,.11,.47 ,1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                            radius: [10,10,10,10]
+                    MDLabel:
+                        padding_x: 20
+                        size_hint:1,.4
+                        text:"Sunset"
+                        color: 1,1,1 ,1
+                    MDSeparator:
+                        size_hint:1,.03
+                    MDLabel:
+                        color: 1,1,1 ,1
+                        id : sunset
+                        size_hint:1,.6
+                        text:"17:52"
+                        halign:'center'
+                        font_size:"20sp"
+        BoxLayout:
+            size_hint:1,.3
+            BoxLayout:
+                BoxLayout:
+                    orientation:"vertical"
+                    canvas.before:
+                        Color:
+                            id : color_of_feels_like
+                            rgba : (.6117,.8117,.866,1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDLabel:
+                        size_hint:1,.4
+                        text:"Wind"
+                        padding_x: 20
+                    MDSeparator:
+                        size_hint:1,.03
+                    MDLabel:
+                        id : wind
+                        size_hint:1,.6
+                        text: "23 km/h"
+                        font_size:"20sp"
+                        halign:'center'
+            BoxLayout:
+                BoxLayout:
+                    orientation:"vertical"
+                    canvas.before:
+                        Color:
+                            id : color_of_feels_like
+                            rgba : (.9529,.9294,.3490,1)
+                        RoundedRectangle:
+                            size: self.size
+                            pos: self.pos
+                    MDLabel:
+                        size_hint:1,.4
+                        text:"Feels Like"
+                        padding_x: 20
+                        color : 0,122,122,1
+                    MDSeparator:
+                        size_hint:1,.03
+                    MDLabel:
+                        id:feels_like
+                        color : 0,122,122,1
+                        size_hint:1,.6
+                        text: ""
+                        font_size:"20sp"
+                        halign:'center'
+<search>:
+    size_hint:.75,.65
+    MDCard:
+        FloatLayout:
+            id:spot
+
+            MDTextFieldRect:
+                id:city
+                pos_hint:{"center_x":.5,"center_y":.8}
+                size_hint: .7,.075
+                hint_text: "Search"
+                mode: "rectangle"
+                text:""
+            MDFillRoundFlatButton:
+                size_hint: .6,.1
+                text:"search"
+                pos_hint:{"center_x":.5,"center_y":.7}
+                on_release: app.change_screen(city.text,usa.active)
+            MDCheckbox:
+                id : turkey
+                size_hint: .1,.1
+
+                pos_hint:{"center_x":.75,"center_y":.6}
+                size: "48dp", "48dp"
+                active : True if usa.active == False else False
+                ripple_scale:0
+                color : (1,0,0,1)
+                selected_color:(1,0,0,1)
+            MDCheckbox:
+                size_hint: .1,.1
+                id : usa
+                pos_hint:{"center_x":.75,"center_y":.55}
+                size: "48dp", "48dp"
+                active : False if turkey.active == True else True
+                ripple_scale:0
+            Label:
+                text:"Red is for TURKEY"
+                pos_hint:{"center_x":.43,"center_y":.6}
+                color: 1,0,0,1
+                font_size: "17sp"
+            Label:
+                text:"Blue is for USA"
+                pos_hint:{"center_x":.40,"center_y":.55}
+                color: 0,0,1,1
+                font_size: "17sp"
+            Label:
+                text:"- data from timeanddate.com"
+                pos_hint:{"center_x":.45,"center_y":.075}
+                font_size: "15sp"
+                color: 0,0,0,1
+<card_of_daily>
+
+    BoxLayout:
+        canvas.before:
+            Color:
+                id :color_of_daily
+                rgba: root.color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        MDLabel:
+            padding_x : 17
+            size_hint : .4,1
+            text : root.day
+            halign : 'left'
+            color : root.text_color
+            font_size: "16sp"
+        ImageButton:
+            size_hint:.25,1
+            source: "{}".format(root.image)
+        Label:
+            size_hint:.45,1
+            text : root.temperature
+            valign:'center'
+            color: root.text_color
+            font_size: "15sp"
+
+<card_of_hours>
+    BoxLayout:
+        canvas.before:
+            Color:
+                id :color_of_daily
+                rgba: root.bc_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        orientation:"vertical"
+        Label:
+            size_hint:1,.25
+            text : root.hour
+            valign:'center'
+            color: root.text_color
+
+        BoxLayout:
+            size_hint:1,.5
+            ImageButton:
+                #source: "weather_images/passing_clouds.png"
+                source: "{}".format(root.status_of_weather)
+        Label:
+            size_hint:1,.25
+            text : root.temp_of_hour
+            valign :'center'
+            color: root.text_color
