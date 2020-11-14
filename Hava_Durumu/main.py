@@ -19,7 +19,7 @@ import scrapy
 from kivy.properties import StringProperty,BoundedNumericProperty,BooleanProperty
 from kivy.uix.button import ButtonBehavior
 from kivy.uix.image import Image
-city = "bursa"
+city = "istanbul"
 url = 'https://www.timeanddate.com/weather/turkey/'+city
 print(url)
 hourly_url = url+"/hourly"
